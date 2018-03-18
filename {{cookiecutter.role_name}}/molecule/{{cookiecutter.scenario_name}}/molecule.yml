@@ -1,13 +1,13 @@
 ---
 dependency:
-  name: gilt
+  name: galaxy
 driver:
   name: docker
 lint:
   name: yamllint
 platforms:
-  - name: instance-1
-    image: centos:7
+  - name: instance
+    image: archlinux/base
 provisioner:
   name: ansible
   lint:
