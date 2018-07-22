@@ -1,7 +1,21 @@
-def test_bake_project(cookies):
-    result = cookies.bake(extra_context={'role_name': 'helloworld'})
+import pytest
 
-    assert result.exit_code == 0
-    assert result.exception is None
-    assert result.project.basename == 'helloworld'
-    assert result.project.isdir()
+
+@pytest.fixture
+def baked_project(cookies):
+    result = cookies.bake(extra_context={'role_name': 'helloworld'})
+    return result
+
+
+def test_bake_project(baked_project):
+    assert baked_project.exit_code == 0
+    assert baked_project.exception is None
+    assert baked_project.project.basename == 'helloworld'
+    assert baked_project.project.isdir()
+
+
+def test_readme(baked_project):
+    readme_file = baked_project.project.join('README.md')
+    readme_lines = readme_file.readlines(cr=False)
+
+    assert readme_lines[0] == 'helloworld'
