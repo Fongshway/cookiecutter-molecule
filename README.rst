@@ -31,8 +31,8 @@ Usage
 
 ::
 
-    $ pip install cookiecutter
-    $ cookiecutter gh:retr0h/cookiecutter-molecule
+    $ pipenv install cookiecutter
+    $ cookiecutter gh:fongshway/cookiecutter-molecule
 
 License
 -------
