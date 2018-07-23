@@ -1,0 +1,13 @@
+sudo: required
+dist: trusty
+language: python
+python:
+  - "3.6"
+before_install:
+  - pip install pipenv
+install: pipenv install --deploy --system
+script: pytest tests
+notifications:
+    email: true
+    on_success: change
+    on_failure: always
