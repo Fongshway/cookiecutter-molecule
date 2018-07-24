@@ -3,6 +3,14 @@
 
 A brief description of the role goes here.
 
+Build Status
+------------
+
+| Branch        | Status        |
+| ------------- |:-------------:|
+| master        | [![Build Status](https://travis-ci.org/Fongshway/{{ cookiecutter.role_name }}.svg?branch=master)](https://travis-ci.org/Fongshway/{{ cookiecutter.role_name }}) |
+| develop       | [![Build Status](https://travis-ci.org/Fongshway/{{ cookiecutter.role_name }}.svg?branch=develop)](https://travis-ci.org/Fongshway/{{ cookiecutter.role_name }}) |
+
 Requirements
 ------------
 
