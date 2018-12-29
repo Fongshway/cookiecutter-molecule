@@ -4,9 +4,14 @@ dist: trusty
 language: python
 python:
   - "3.6"
+env:
+  global:
+    - VERSION_PIP=18.1
+    - VERSION_PIPENV=2018.11.26
 before_install:
   - sudo apt-get -qq update
-  - pip install pipenv
+  - pip install pip==$VERSION_PIP
+  - pip install pipenv==$VERSION_PIPENV
 install: pipenv install --deploy --system
 script: pytest tests
 notifications:
